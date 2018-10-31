@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>iBiblioteca</ion-title>
   </ion-navbar>
 
@@ -15,9 +15,13 @@
 
 <ion-content padding>
     <ion-list>
-      <ion-item *ngFor="let book of books">
-        <p>2017-Actualidad</p>
-        <p>Analisa en Gpex</p>
+      <ion-item *ngFor="let book of books" (click)="bookDetail(book)">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/{{book.image}}">
+        </ion-thumbnail>
+        <h2 text-wrap>{{ book.title }}</h2>
+        <p><strong> Autor: </strong> {{ book.author }}</p>
+        <p><strong>Año: </strong> {{ book.year }}</p>
       </ion-item>
     </ion-list>
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BooksServiceProvider } from '../../providers/books-service/books-service';
+import { BookDetailPage } from '../book-detail/book-detail';
 
 /**
  * Generated class for the IBibliotecaPage page.
@@ -14,38 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'i-biblioteca.html',
 })
 export class IBibliotecaPage {
+  books: { title: string; author: string; year: number; image: string; }[];
 
-  books = [
-    {
-      title: 'La Colmena',
-      author: 'Camilo Jose Cela',
-      year: 1951,
-      image: 'lacolmena.jpg'
-    },
-    {
-      title: 'La Galatea',
-      author: 'Miguel de Cervantes Saavedra',
-      year: 1585,
-      image: 'lagalatea.jpg'
-    },
-    {
-      title: 'El ingenioso Hidalgo Don Quijote',
-      author: 'Miguel de Cervantes Saavedra',
-      year: 1605,
-      image: 'donQuijote.jpg'
-    },
-    {
-      title: 'La Dorotea',
-      author: 'Felix Lope de Vega y Carpio',
-      year: 1585,
-      image: 'dorotea.jpg'
-    },
-  ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private bookService: BooksServiceProvider) {
+    this.books = this.bookService.getBooks();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IBibliotecaPage');
+  }
+
+  bookDetail(book: any) {
+    this.navCtrl.push(BookDetailPage, {'book': book});
   }
 
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Inicio
     </ion-title>
@@ -8,18 +8,18 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
+    <ion-card-header color="secondary">
       ¡Bienvenidos a iBiblioteca!
     </ion-card-header>
     <ion-card-content>
       <p>iBiblioteca es una aplicación desarrollada con ionic que te permite gestionar una iBiblioteca de un centro educativo</p>
     </ion-card-content>
-    <button ion-item>
+    <button ion-item (click)="navigateBooksPage()">
       Acceso a la iBiblioteca
     </button>
   </ion-card>
   <ion-card>
-    <ion-card-header>
+    <ion-card-header color="secondary">
       Información sobre el autor
     </ion-card-header>
     <ion-card-content>

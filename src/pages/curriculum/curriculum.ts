@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CurriculumServiceProvider } from '../../providers/curriculum-service/curriculum-service';
 
 /**
  * Generated class for the CurriculumPage page.
@@ -14,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'curriculum.html',
 })
 export class CurriculumPage {
+  jobs: { description: string; period: string; }[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private curriculumService: CurriculumServiceProvider) {
+    this.jobs = this.curriculumService.getJobs();
   }
 
   ionViewDidLoad() {

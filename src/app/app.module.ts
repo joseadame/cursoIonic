@@ -8,6 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthorPageModule } from '../pages/author/author.module';
 import { CurriculumPageModule } from '../pages/curriculum/curriculum.module';
+import { IBibliotecaPageModule } from '../pages/i-biblioteca/i-biblioteca.module';
+import { BooksServiceProvider } from '../providers/books-service/books-service';
+import { CurriculumServiceProvider } from '../providers/curriculum-service/curriculum-service';
+import { BookDetailPageModule } from '../pages/book-detail/book-detail.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { CurriculumPageModule } from '../pages/curriculum/curriculum.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AuthorPageModule,
-    CurriculumPageModule
+    CurriculumPageModule,
+    IBibliotecaPageModule,
+    BookDetailPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -29,7 +35,9 @@ import { CurriculumPageModule } from '../pages/curriculum/curriculum.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BooksServiceProvider,
+    CurriculumServiceProvider
   ]
 })
 export class AppModule {}

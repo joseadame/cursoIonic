@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Autor</ion-title>
   </ion-navbar>
 
@@ -24,14 +24,8 @@
     <button ion-item (click)="navigateToCurriculum()">
       Curriculum
     </button>
-    <button ion-item>
-      Correo: correo@correo.com
-    </button>
-    <button ion-item>
-      Twitter: @twitter
-    </button>
-    <button ion-item>
-      Teléfono: 900900900
-    </button>
+    <a ion-button full href="mailto:correo@correo.com">Email: correo@correo.com</a>
+    <a ion-button full href="http://www.twitter.com">@twitter</a>
+    <a ion-button full href="tel:666666666">Tel: 666666666</a>
   </ion-card>
 </ion-content>
