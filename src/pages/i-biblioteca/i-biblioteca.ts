@@ -16,7 +16,7 @@ import { BookDetailPage } from '../book-detail/book-detail';
   templateUrl: 'i-biblioteca.html',
 })
 export class IBibliotecaPage {
-  books: { title: string; author: string; year: number; image: string; }[];
+  books: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private bookService: BooksServiceProvider) {
     this.books = this.bookService.getBooks();
